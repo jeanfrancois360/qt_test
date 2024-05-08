@@ -8,34 +8,42 @@
  "engine": "InnoDB",
  "field_order": [
   "title",
-  "project",
+  "start_date",
   "priority",
   "column_break_43qnn",
-  "start_date",
+  "project",
   "end_date",
+  "status",
   "section_break_hmuvs",
   "task_description",
   "assignees_section",
   "task_assignees",
+  "attachements",
   "amended_from"
  ],
  "fields": [
   {
    "fieldname": "title",
    "fieldtype": "Data",
-   "label": "Title"
+   "in_list_view": 1,
+   "label": "Title",
+   "reqd": 1
   },
   {
    "fieldname": "project",
    "fieldtype": "Link",
+   "in_list_view": 1,
    "label": "Project",
-   "options": "Project"
+   "options": "Project",
+   "reqd": 1
   },
   {
    "fieldname": "priority",
    "fieldtype": "Select",
+   "in_list_view": 1,
    "label": "Priority",
-   "options": "\nLow\nHigh"
+   "options": "\nLow\nHigh",
+   "reqd": 1
   },
   {
    "fieldname": "column_break_43qnn",
@@ -44,12 +52,15 @@
   {
    "fieldname": "start_date",
    "fieldtype": "Date",
-   "label": "Start Date"
+   "in_list_view": 1,
+   "label": "Start Date",
+   "reqd": 1
   },
   {
    "fieldname": "end_date",
    "fieldtype": "Date",
-   "label": "End Date"
+   "label": "End Date",
+   "reqd": 1
   },
   {
    "fieldname": "section_break_hmuvs",
@@ -58,7 +69,8 @@
   {
    "fieldname": "task_description",
    "fieldtype": "Small Text",
-   "label": "Description"
+   "label": "Description",
+   "reqd": 1
   },
   {
    "fieldname": "assignees_section",
@@ -67,7 +79,7 @@
   },
   {
    "fieldname": "task_assignees",
-   "fieldtype": "Table",
+   "fieldtype": "Table MultiSelect",
    "options": "Task Assignee"
   },
   {
@@ -79,12 +91,25 @@
    "print_hide": 1,
    "read_only": 1,
    "search_index": 1
+  },
+  {
+   "default": "Pending",
+   "fieldname": "status",
+   "fieldtype": "Data",
+   "label": "Status",
+   "options": "\nPending\nOngoing\nCompleted",
+   "reqd": 1
+  },
+  {
+   "fieldname": "attachements",
+   "fieldtype": "Attach",
+   "label": "Attachements"
   }
  ],
  "index_web_pages_for_search": 1,
  "is_submittable": 1,
  "links": [],
- "modified": "2024-05-08 10:53:56.883896",
+ "modified": "2024-05-08 11:33:58.053381",
  "modified_by": "Administrator",
  "module": "QT Test",
  "name": "Tasks",
